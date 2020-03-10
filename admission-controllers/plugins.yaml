@@ -10,7 +10,7 @@ Plugins:
      Reason: CIS benchmark 1.2.11
    FeatureState: 
      State:   Deprecated
-     Version: "v1.13"
+     Version: "1.13"
 -  Plugin: AlwaysPullImages
    Description: >
      This admission controller modifies every new Pod to force the image pull policy to Always.
@@ -26,10 +26,10 @@ Plugins:
    Recommendation:
      Check: True
      Enable: False
-     Reason: Deprecated since v1.13
+     Reason: Deprecated since Kubernetes 1.13
    FeatureState: 
      State:   Deprecated
-     Version: "v1.13"
+     Version: "1.13"
 -  Plugin: DefaultStorageClass
    Description: >
      This admission controller observes creation of PersistentVolumeClaim objects that do not request any specific storage class and automatically adds a default storage class to them.
@@ -57,10 +57,10 @@ Plugins:
    Recommendation:
      Check: True
      Enable: False
-     Reason: Deprecated since v1.13 
+     Reason: Deprecated since Kubernetes 1.13 
    FeatureState: 
      State:   Deprecated
-     Version: "v1.13"
+     Version: "1.13"
 -  Plugin: DenyEscalatingExec
    Description: >
      This admission controller will deny exec and attach commands to pods that run with escalated privileges that allow host access.
@@ -71,10 +71,10 @@ Plugins:
    Recommendation:
      Check: True
      Enable: False
-     Reason: Deprecated since v1.13
+     Reason: Deprecated since Kubernetes 1.13
    FeatureState: 
      State:   Deprecated
-     Version: "v1.13"
+     Version: "1.13"
 -  Plugin: EventRateLimit
    Description: >
      This admission controller mitigates the problem where the API server gets flooded by event requests.
@@ -89,7 +89,7 @@ Plugins:
      Reason: CIS benchmark 1.2.10
    FeatureState: 
      State:   Alpha
-     Version: "v1.13"
+     Version: "1.13"
 -  Plugin: ExtendedResourceToleration
    Description: >
      This plug-in facilitates creation of dedicated nodes with extended resources.
@@ -122,7 +122,7 @@ Plugins:
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState: 
      State:   Beta
-     Version: "v1.13"
+     Version: "1.13"
 -  Plugin: NamespaceAutoProvision
    Description: >
      This admission controller examines all incoming requests on namespaced resources and checks if the referenced namespace does exist. It creates a namespace if it cannot be found. This admission controller is useful in deployments that do not want to restrict creation of a namespace prior to its usage.
@@ -161,10 +161,10 @@ Plugins:
    Recommendation:
      Check: True
      Enable: False
-     Reason: Deprecated since v1.13
+     Reason: Deprecated since Kubernetes 1.13
    FeatureState: 
      State:   Deprecated
-     Version: "v1.13"
+     Version: "1.13"
 -  Plugin: PodNodeSelector
    Description: >
      This admission controller defaults and limits what node selectors may be used within a namespace by reading a namespace annotation and a global configuration.
@@ -220,7 +220,7 @@ Plugins:
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState: 
      State:   Alpha
-     Version: "v1.16"
+     Version: "1.16"
 -  Plugin: SecurityContextDeny
    Description: >
      This admission controller will deny any pod that attempts to set certain escalating SecurityContext fields. This should be enabled if a cluster doesn’t utilize pod security policies to restrict the set of values a security context can take.
@@ -245,17 +245,17 @@ Plugins:
    Recommendation:
      Check: True
      Enable: True
-     Reason: Enabled by default in v1.16
+     Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: TaintNodesByCondition
    Description: "This admission controller taints newly created Nodes as NotReady and NoSchedule. That tainting avoids a race condition that could cause Pods to be scheduled on new Nodes before their taints were updated to accurately reflect their reported conditions."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#taintnodesbycondition
    Recommendation:
      Check: True
      Enable: True
-     Reason: Enabled by default in v1.16
+     Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState: 
      State:   Beta
-     Version: "v1.12"
+     Version: "1.12"
 -  Plugin: ValidatingAdmissionWebhook
    Description: "This admission controller calls any validating webhooks which match the request."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook
@@ -263,7 +263,7 @@ Plugins:
    Recommendation:
      Check: True
      Enable: True
-     Reason: Enabled by default in v1.16
+     Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState:
      State:   Beta
-     Version: "v1.13"
+     Version: "1.13"
