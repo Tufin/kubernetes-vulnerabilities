@@ -9,6 +9,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11253"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11253"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/jk8polzSUxs"
   Severity:               "high"
   Description:            "Improper input validation in the Kubernetes API server in versions v1.0-1.12 and versions prior to v1.13.12, v1.14.8, v1.15.5, and v1.16.2 allows authorized users to send malicious YAML or JSON payloads, causing the API server to consume excessive CPU or memory, potentially crashing and becoming unavailable. Prior to v1.14.0, default RBAC policy authorized anonymous users to submit requests that could trigger this vulnerability. Clusters upgraded from a version prior to v1.14.0 keep the more permissive policy by default for backwards compatibility."
@@ -21,6 +22,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9512"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-9512"
     Announcement:         "https://groups.google.com/forum/#!searchin/kubernetes-security-announce/CVE-2019-9512%7Csort:date/kubernetes-security-announce/wlHLHit1BqA/b26CdkvoAwAJ"
   Severity:               "high"
   Description:            "Some HTTP/2 implementations are vulnerable to ping floods, potentially leading to a denial of service. The attacker sends continual pings to an HTTP/2 peer, causing the peer to build an internal queue of responses. Depending on how efficiently this data is queued, this can consume excess CPU, memory, or both."
@@ -33,9 +35,10 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9514"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-9514"
     Announcement:         "https://groups.google.com/forum/#!searchin/kubernetes-security-announce/CVE-2019-9512%7Csort:date/kubernetes-security-announce/wlHLHit1BqA/b26CdkvoAwAJ"
   Severity:               "high"
-  Description: "Some HTTP/2 implementations are vulnerable to a reset flood, potentially leading to a denial of service. The attacker opens a number of streams and sends an invalid request over each stream that should solicit a stream of RST_STREAM frames from the peer. Depending on how the peer queues the RST_STREAM frames, this can consume excess memory, CPU, or both."
+  Description:            "Some HTTP/2 implementations are vulnerable to a reset flood, potentially leading to a denial of service. The attacker opens a number of streams and sends an invalid request over each stream that should solicit a stream of RST_STREAM frames from the peer. Depending on how the peer queues the RST_STREAM frames, this can consume excess memory, CPU, or both."
 - CVE:                    "CVE-2019-11247"
   FixedIn:
   - "1.11.10-gke.6"
@@ -46,9 +49,10 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11247"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11247"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/vUtEcSEY6SM"
   Severity:               "high"
-  Description: "The Kubernetes kube-apiserver mistakenly allows access to a cluster-scoped custom resource if the request is made as if the resource were namespaced. Authorizations for the resource accessed in this manner are enforced using roles and role bindings within the namespace, meaning that a user with access only to a resource in one namespace could create, view update or delete the cluster-scoped resource (according to their namespace role privileges). Kubernetes affected versions include versions prior to 1.13.9, versions prior to 1.14.5, versions prior to 1.15.2, and versions 1.7, 1.8, 1.9, 1.10, 1.11, 1.12."
+  Description:            "The Kubernetes kube-apiserver mistakenly allows access to a cluster-scoped custom resource if the request is made as if the resource were namespaced. Authorizations for the resource accessed in this manner are enforced using roles and role bindings within the namespace, meaning that a user with access only to a resource in one namespace could create, view update or delete the cluster-scoped resource (according to their namespace role privileges). Kubernetes affected versions include versions prior to 1.13.9, versions prior to 1.14.5, versions prior to 1.15.2, and versions 1.7, 1.8, 1.9, 1.10, 1.11, 1.12."
 - CVE:                    "CVE-2019-8912"
   FixedIn:
   - "1.10.12-gke.14"
@@ -59,6 +63,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-8912"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-8912"
   Severity:               "High"
   Description:            "In the Linux kernel through 4.20.11, af_alg_release() in crypto/af_alg.c neglects to set a NULL value for a certain structure member, which leads to a use-after-free in sockfs_setattr"
 - CVE:                    "CVE-2019-9900"
@@ -73,6 +78,7 @@ Vulnerabilities:
   Component:              "kubernetes, Istio"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9900"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-9900"
   Severity:               "High"
   Description:            "If you have enabled Istio on Google Kubernetes Engine (GKE), you may be affected by this vullnerability. When parsing HTTP/1.x header values, Envoy 1.9.0 and before does not reject embedded zero characters (NUL, ASCII 0x0). This allows remote attackers crafting header values containing embedded NUL characters to potentially bypass header matching rules, gaining access to unauthorized resources."
 - CVE:                    "CVE-2019-9901"
@@ -87,5 +93,6 @@ Vulnerabilities:
   Component:              "kubernetes, Istio"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9901"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-9901"
   Severity:               "High"
   Description:            "If you have enabled Istio on Google Kubernetes Engine (GKE), you may be affected by this vullnerability. Envoy 1.9.0 and before does not normalize HTTP URL paths. A remote attacker may craft a relative path, e.g., something/../admin, to bypass access control, e.g., a block on /admin. A backend server could then interpret the non-normalized path and provide an attacker access beyond the scope provided for by the access control policy."

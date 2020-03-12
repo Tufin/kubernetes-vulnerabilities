@@ -11,6 +11,7 @@ Vulnerabilities:
   Subcomponent:           "kubernetes-csi sidecars"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11255"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11255"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/aXiYN0q4uIw"
   Severity:               "medium"
   Description:            "A security issue has been found in the kubernetes-csi external-provisioner, external-snapshotter, and external-resizer sidecars that impacts most versions of the sidecars bundled in Container Storage Interface (CSI) drivers. The vulnerabilities can result in unauthorized volume data access or mutation when using CSI volume snapshot, cloning or resizing features in Kubernetes. Prior to Kubernetes 1.16, these features were all alpha and disabled by default. Starting in Kubernetes 1.16, CSI cloning and resizing features are beta and enabled by default."
@@ -24,6 +25,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11253"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11253"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/jk8polzSUxs"
   Severity:               "high"
   Description:            "Improper input validation in the Kubernetes API server in versions v1.0-1.12 and versions prior to v1.13.12, v1.14.8, v1.15.5, and v1.16.2 allows authorized users to send malicious YAML or JSON payloads, causing the API server to consume excessive CPU or memory, potentially crashing and becoming unavailable. Prior to v1.14.0, default RBAC policy authorized anonymous users to submit requests that could trigger this vulnerability. Clusters upgraded from a version prior to v1.14.0 keep the more permissive policy by default for backwards compatibility."
@@ -34,6 +36,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11250"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11250"
   Severity:               "medium"
   Description:            "The Kubernetes client-go library logs request headers at verbosity levels of 7 or higher. This can disclose credentials to unauthorized users via logs or command output. Kubernetes components (such as kube-apiserver) prior to v1.16.0, which make use of basic or bearer token authentication, and run at high verbosity levels, are affected."
 - CVE:                    "CVE-2019-16276"
@@ -45,6 +48,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-16276"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-16276"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/PtsUCqFi4h4"
   Severity:               "high"
   Description:            "Go before 1.12.10 and 1.13.x before 1.13.1 allow HTTP Request Smuggling."
@@ -58,6 +62,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11248"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11248"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/pKELclHIov8"
   Severity:               "high"
   Description:            "The debugging endpoint /debug/pprof is exposed over the unauthenticated Kubelet healthz port. The go pprof endpoint is exposed over the Kubelet's healthz port. This debugging endpoint can potentially leak sensitive information such as internal Kubelet memory addresses and configuration, or for limited denial of service."
@@ -70,6 +75,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9512"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-9512"
     Announcement:         "https://groups.google.com/forum/#!searchin/kubernetes-security-announce/CVE-2019-9512%7Csort:date/kubernetes-security-announce/wlHLHit1BqA/b26CdkvoAwAJ"
   Severity:               "high"
   Description:            "Some HTTP/2 implementations are vulnerable to ping floods, potentially leading to a denial of service. The attacker sends continual pings to an HTTP/2 peer, causing the peer to build an internal queue of responses. Depending on how efficiently this data is queued, this can consume excess CPU, memory, or both."
@@ -82,6 +88,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9514"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-9514"
     Announcement:         "https://groups.google.com/forum/#!searchin/kubernetes-security-announce/CVE-2019-9512%7Csort:date/kubernetes-security-announce/wlHLHit1BqA/b26CdkvoAwAJ"
   Severity:               "high"
   Description:            "Some HTTP/2 implementations are vulnerable to a reset flood, potentially leading to a denial of service. The attacker opens a number of streams and sends an invalid request over each stream that should solicit a stream of RST_STREAM frames from the peer. Depending on how the peer queues the RST_STREAM frames, this can consume excess memory, CPU, or both."
@@ -94,6 +101,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1002100"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-1002100"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/i-HEIs8WC5w"
   Severity:               "medium"
   Description:            "In all Kubernetes versions prior to v1.11.8, v1.12.6, and v1.13.4, users that are authorized to make patch requests to the Kubernetes API Server can send a specially crafted patch of type /json-patch/ (e.g. `kubectl patch --type json` or `\"Content-Type: application/json-patch+json\"`) that consumes excessive resources while processing, causing a Denial of Service on the API Server."
@@ -106,6 +114,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11247"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11247"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/vUtEcSEY6SM"
   Severity:               "high"
   Description:            "The Kubernetes kube-apiserver mistakenly allows access to a cluster-scoped custom resource if the request is made as if the resource were namespaced. Authorizations for the resource accessed in this manner are enforced using roles and role bindings within the namespace, meaning that a user with access only to a resource in one namespace could create, view update or delete the cluster-scoped resource (according to their namespace role privileges). Kubernetes affected versions include versions prior to 1.13.9, versions prior to 1.14.5, versions prior to 1.15.2, and versions 1.7, 1.8, 1.9, 1.10, 1.11, 1.12."
@@ -120,6 +129,7 @@ Vulnerabilities:
   SubComponent:           "CNI"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9946"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-9946"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/l7J1lW2ciHw"
   Severity:               "medium"
   Description:            "Cloud Native Computing Foundation (CNCF) CNI (Container Networking Interface) 0.7.4 has a network firewall misconfiguration which affects Kubernetes. The CNI 'portmap' plugin, used to setup HostPorts for CNI, inserts rules at the front of the iptables nat chains; which take precedence over the KUBE- SERVICES chain. Because of this, the HostPort/portmap rule could match incoming traffic even if there were better fitting, more specific service definition rules like NodePorts later in the chain. The issue is fixed in CNI 0.7.5 and Kubernetes 1.11.9, 1.12.7, 1.13.5, and 1.14.0."
@@ -133,6 +143,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1002105"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2018-1002105"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/fm1MkmubMoI"
   Severity:               "critical"
   Description:            "In all Kubernetes versions prior to v1.10.11, v1.11.5, and v1.12.3, incorrect handling of error responses to proxied upgrade requests in the kube-apiserver allowed specially crafted requests to establish a connection through the Kubernetes API server to backend servers, then send arbitrary requests over the same connection directly to the backend, authenticated with the Kubernetes API server's TLS credentials used to establish the backend connection."
@@ -146,6 +157,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11243"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11243"
   Severity:               "high"
   Description:            "In Kubernetes v1.12.0-v1.12.4 and v1.13.0, the rest.AnonymousClientConfig() method returns a copy of the provided config, with credentials removed (bearer token, username/password, and client certificate/key data). In the affected versions, rest.AnonymousClientConfig() did not effectively clear service account credentials loaded using rest.InClusterConfig()"
 - CVE:                    "CVE-2018-1002101"
@@ -163,6 +175,7 @@ Vulnerabilities:
     - "Windows"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1002101"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2018-1002101"
   Severity:               "critical"
   Description:            "In Kubernetes versions 1.9.0-1.9.9, 1.10.0-1.10.5, and 1.11.0-1.11.1, user input was handled insecurely while setting up volume mounts on Windows nodes, which could lead to command line argument injection."
 - CVE:                    "CVE-2017-1000056"
@@ -177,6 +190,7 @@ Vulnerabilities:
     - "GKE"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000056"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2017-1000056"
   Severity:               "critical"
   Description:            "Kubernetes version 1.5.0-1.5.4 is vulnerable to a privilege escalation in the PodSecurityPolicy admission plugin resulting in the ability to make use of any existing PodSecurityPolicy object."
 - CVE:                    "CVE-2017-1002102"
@@ -188,6 +202,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1002102"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2017-1002102"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/P7lBjbjDKd8"
   Severity:               "medium"
   Description:            "In Kubernetes versions 1.3.x, 1.4.x, 1.5.x, 1.6.x and prior to versions 1.7.14, 1.8.9 and 1.9.4 containers using a secret, configMap, projected or downwardAPI volume can trigger deletion of arbitrary files/directories from the nodes where they are running."
@@ -200,6 +215,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1002101"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2017-1002101"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/P7lBjbjDKd8"
   Severity:               "critical"
   Description:            "In Kubernetes versions 1.3.x, 1.4.x, 1.5.x, 1.6.x and prior to versions 1.7.14, 1.8.9 and 1.9.4 containers using a secret, configMap, projected or downwardAPI volume can trigger deletion of arbitrary files/directories from the nodes where they are running."
@@ -214,6 +230,7 @@ Vulnerabilities:
     - "Azure"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1002100"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2017-1002100"
   Severity:               "medium"
   Description:            "Default access permissions for Persistent Volumes (PVs) created by the Kubernetes Azure cloud provider in versions 1.6.0 to 1.6.5 are set to \"container\" which exposes a URI that can be accessed without authentication on the public internet. Access to the URI string requires privileged access to the Kubernetes cluster or authenticated access to the Azure portal."
 - CVE:                    "CVE-2015-7528"
@@ -223,6 +240,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7528"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2015-7528"
   Severity:               "medium"
   Description:            "Kubernetes before 1.2.0-alpha.5 allows remote attackers to read arbitrary pod logs via a container name."
 - CVE:                    "CVE-2017-14491"
@@ -235,6 +253,7 @@ Vulnerabilities:
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14491"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2017-14491"
     Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/C6IkCdk7opo"
   Severity:               "critical"
   Description:            "Heap-based buffer overflow in dnsmasq before 2.78 allows remote attackers to cause a denial of service (crash) or execute arbitrary code via a crafted DNS response."
