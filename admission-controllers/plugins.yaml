@@ -5,7 +5,7 @@ Plugins:
      It is deprecated because its behavior is the same as if there were no admission controller at all.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwaysadmit
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: False
      Reason: CIS benchmark 1.2.11
    FeatureState: 
@@ -17,14 +17,19 @@ Plugins:
      This is useful in a multitenant cluster so that users can be assured that their private images can only be used by those who have the credentials to pull them.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: CIS benchmark 1.2.12
+   - Platform: gke
+     Enable: False
+     Reason: >
+       GKE does not enable the Always Pull Images admission controller, as this overrides the ImagePullStrategy field.
+       Always Pulling images may also limit the ability to scale, as compared to preloaded images.	      
 -  Plugin: AlwaysDeny
    Description: "Rejects all requests. AlwaysDeny is DEPRECATED as no real meaning."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwaysdeny
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: False
      Reason: Deprecated since Kubernetes 1.13
    FeatureState: 
@@ -36,7 +41,7 @@ Plugins:
      This way, users that do not request any special storage class do not need to care about them at all and they will get the default one.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaultstorageclass
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: DefaultTolerationSeconds
@@ -44,7 +49,7 @@ Plugins:
      This admission controller sets the default forgiveness toleration for pods to tolerate the taints notready:NoExecute and unreachable:NoExecute for 5 minutes, if the pods don’t already have toleration for taints node.kubernetes.io/not-ready:NoExecute or node.alpha.kubernetes.io/unreachable:NoExecute.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaulttolerationseconds
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for version 1.10
 -  Plugin: DenyExecOnPrivileged
@@ -55,7 +60,7 @@ Plugins:
      Use of a policy-based admission plugin (like PodSecurityPolicy or a custom admission plugin) which can be targeted at specific users or Namespaces and also protects against creation of overly privileged Pods is recommended instead.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#denyexeconprivileged
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: False
      Reason: Deprecated since Kubernetes 1.13 
    FeatureState: 
@@ -69,7 +74,7 @@ Plugins:
      Use of a policy-based admission plugin (like PodSecurityPolicy or a custom admission plugin) which can be targeted at specific users or Namespaces and also protects against creation of overly privileged Pods is recommended instead
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#denyescalatingexec
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: False
      Reason: Deprecated since Kubernetes 1.13
    FeatureState: 
@@ -84,9 +89,12 @@ Plugins:
      - Referencing an EventRateLimit configuration file from the file provided to the API server’s command line flag --admission-control-config-file:
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#eventratelimit
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: CIS benchmark 1.2.10
+   - Platform: gke
+     Enable: False
+     Reason: GKE does not support the Event Rate Limit admission controller as it is a Kubernetes Alpha feature.
    FeatureState: 
      State:   Alpha
      Version: "1.13"
@@ -99,6 +107,15 @@ Plugins:
 -  Plugin: ImagePolicyWebhook
    Description: "The ImagePolicyWebhook admission controller allows a backend webhook to make admission decisions."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook
+   Recommendation:
+   - Platform: vanilla
+     Enable: True
+     Reason: CIS benchmark 5.5.1
+   - Platform: gke
+     Enable: False
+     Reason: >
+       GKE does not enable the Image Policy Webhook admission controller by default.
+       Image Provenance using Binary Authorization is not set by default, as this requires a policy to be set.
 -  Plugin: LimitPodHardAntiAffinityTopology
    Description: "This admission controller denies any pod that defines AntiAffinity topology key other than kubernetes.io/hostname in requiredDuringSchedulingRequiredDuringExecution."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#limitpodhardantiaffinitytopology
@@ -109,7 +126,7 @@ Plugins:
      LimitRanger can also be used to apply default resource requests to Pods that don’t specify any; currently, the default LimitRanger applies a 0.1 CPU requirement to all Pods in the default namespace.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#limitranger
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: MutatingAdmissionWebhook
@@ -117,7 +134,7 @@ Plugins:
      This admission controller calls any mutating webhooks which match the request. Matching webhooks are called in serial; each one may modify the object if it desires. This admission controller (as implied by the name) only runs in the mutating phase. If a webhook called by this has side effects (for example, decrementing quota) it must have a reconciliation system, as it is not guaranteed that subsequent webhooks or validating admission controllers will permit the request to finish. If you disable the MutatingAdmissionWebhook, you must also disable the MutatingWebhookConfiguration object in the admissionregistration.k8s.io/v1beta1 group/version via the --runtime-config flag (both are on by default in versions >= 1.9).
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState: 
@@ -132,7 +149,7 @@ Plugins:
      This admission controller checks all requests on namespaced resources other than Namespace itself. If the namespace referenced from a request doesn’t exist, the request is rejected.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#namespaceexists
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: False
      Reason: Plugin is deprecated. Use NamespaceLifecycle instead.
 -  Plugin: NamespaceLifecycle
@@ -140,14 +157,14 @@ Plugins:
      This admission controller enforces that a Namespace that is undergoing termination cannot have new objects created in it, and ensures that requests in a non-existent Namespace are rejected. This admission controller also prevents deletion of three system reserved namespaces default, kube-system, kube-public. A Namespace deletion kicks off a sequence of operations that remove all objects (pods, services, etc.) in that namespace. In order to enforce integrity of that process, we strongly recommend running this admission controller.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#namespacelifecycle
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: CIS benchmark 1.2.15
 -  Plugin: NodeRestriction
    Description: "This admission controller limits the Node and Pod objects a kubelet can modify."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#noderestriction
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: CIS benchmark 1.2.17 
 -  Plugin: OwnerReferencesPermissionEnforcement
@@ -159,7 +176,7 @@ Plugins:
      This admission controller automatically attaches region or zone labels to PersistentVolumes as defined by the cloud provider (for example, GCE or AWS). It helps ensure the Pods and the PersistentVolumes mounted are in the same region and/or zone. If the admission controller doesn’t support automatic labelling your PersistentVolumes, you may need to add the labels manually to prevent pods from mounting volumes from a different zone. PersistentVolumeLabel is DEPRECATED and labeling persistent volumes has been taken over by cloud controller manager. Starting from 1.11, this admission controller is disabled by default.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#persistentvolumelabel
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: False
      Reason: Deprecated since Kubernetes 1.13
    FeatureState: 
@@ -173,7 +190,7 @@ Plugins:
    Description: "This admission controller implements additional validations for checking incoming PersistentVolumeClaim resize requests."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#persistentvolumeclaimresize
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: PodPreset
@@ -186,10 +203,14 @@ Plugins:
      For Kubernetes < 1.6.0, the API Server must enable the extensions/v1beta1/podsecuritypolicy API extensions group (--runtime-config=extensions/v1beta1/podsecuritypolicy=true).
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#podsecuritypolicy
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: CIS benchmark 1.2.16
-     Alernative: 
+   - Platform: gke
+     Enable: false
+     Reason: >
+       GKE does not enable the Pod Security Policy admission controller by default, as this requires a policy to be set.
+       GKE customers can enable PodSecurityPolicy.
 -  Plugin: PodTolerationRestriction
    Description: >
      This admission controller first verifies any conflict between a pod’s tolerations and its namespace’s tolerations, and rejects the pod request if there is a conflict. It then merges the namespace’s tolerations into the pod’s tolerations. The resulting tolerations are checked against the namespace’s whitelist of tolerations.
@@ -199,7 +220,7 @@ Plugins:
      The priority admission controller uses the priorityClassName field and populates the integer value of the priority. If the priority class is not found, the Pod is rejected.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#priority
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: ResourceQuota
@@ -207,7 +228,7 @@ Plugins:
      This admission controller will observe the incoming request and ensure that it does not violate any of the constraints enumerated in the ResourceQuota object in a Namespace. If you are using ResourceQuota objects in your Kubernetes deployment, you MUST use this admission controller to enforce quota constraints.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#resourcequota
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: RuntimeClass
@@ -215,7 +236,7 @@ Plugins:
      For RuntimeClass definitions which describe an overhead associated with running a pod, this admission controller will set the pod.Spec.Overhead field accordingly.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#runtimeclass
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState: 
@@ -226,16 +247,21 @@ Plugins:
      This admission controller will deny any pod that attempts to set certain escalating SecurityContext fields. This should be enabled if a cluster doesn’t utilize pod security policies to restrict the set of values a security context can take.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#securitycontextdeny
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Condition: Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used
      Reason: CIS benchmark 1.2.13
+   - Platform: gke
+     Enable: False
+     Reason: >
+       GKE does not enable the Security Context admission controller by default.
+       Using a Pod Security Policy allows more control and is preferred.	
 -  Plugin: ServiceAccount
    Description: >
      This admission controller implements automation for serviceAccounts. We strongly recommend using this admission controller if you intend to make use of Kubernetes ServiceAccount objects.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#serviceaccount
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: CIS benchmark 1.2.14
 -  Plugin: StorageObjectInUseProtection
@@ -243,14 +269,14 @@ Plugins:
      The StorageObjectInUseProtection plugin adds the kubernetes.io/pvc-protection or kubernetes.io/pv-protection finalizers to newly created Persistent Volume Claims (PVCs) or Persistent Volumes (PV). In case a user deletes a PVC or PV the PVC or PV is not removed until the finalizer is removed from the PVC or PV by PVC or PV Protection Controller.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#storageobjectinuseprotection
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: TaintNodesByCondition
    Description: "This admission controller taints newly created Nodes as NotReady and NoSchedule. That tainting avoids a race condition that could cause Pods to be scheduled on new Nodes before their taints were updated to accurately reflect their reported conditions."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#taintnodesbycondition
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState: 
@@ -261,7 +287,7 @@ Plugins:
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook
    Recommended: 
    Recommendation:
-     Check: True
+   - Platform: vanilla
      Enable: True
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState:
