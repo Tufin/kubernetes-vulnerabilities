@@ -71,7 +71,7 @@ Plugins:
      This admission controller will deny exec and attach commands to pods that run with escalated privileges that allow host access.
      This includes pods that run as privileged, have access to the host IPC namespace, and have access to the host PID namespace.
      The DenyEscalatingExec admission plugin is deprecated and will be removed in v1.18.
-     Use of a policy-based admission plugin (like PodSecurityPolicy or a custom admission plugin) which can be targeted at specific users or Namespaces and also protects against creation of overly privileged Pods is recommended instead
+     Use of a policy-based admission plugin (like PodSecurityPolicy or a custom admission plugin) which can be targeted at specific users or Namespaces and also protects against creation of overly privileged Pods is recommended instead.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#denyescalatingexec
    Recommendation:
    - Platform: vanilla
