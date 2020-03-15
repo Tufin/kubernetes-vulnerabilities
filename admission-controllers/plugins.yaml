@@ -112,8 +112,9 @@ Plugins:
      Enable: True
      Reason: CIS benchmark 5.5.1
    - Platform: gke
-     Enable: False
+     Enable: True
      Reason: >
+       CIS benchmark 5.5.1. 
        GKE does not enable the Image Policy Webhook admission controller by default.
        Image Provenance using Binary Authorization is not set by default, as this requires a policy to be set.
 -  Plugin: LimitPodHardAntiAffinityTopology
@@ -207,8 +208,9 @@ Plugins:
      Enable: True
      Reason: CIS benchmark 1.2.16
    - Platform: gke
-     Enable: false
+     Enable: True
      Reason: >
+       CIS benchmark 1.2.16.
        GKE does not enable the Pod Security Policy admission controller by default, as this requires a policy to be set.
        GKE customers can enable PodSecurityPolicy.
 -  Plugin: PodTolerationRestriction
