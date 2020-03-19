@@ -3,14 +3,12 @@ Vulnerabilities:
   FixedIn:
   - "2.2.7"
   - "2.1.12"
-  - "2.1.12"
   FirstVulnerableVersion: ""
   Component:              "Rancher"
   Links:
-    CVE:                  ""
+    CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14435"
     NVD:                  ""
-    Rancher:              "https://rancher.com/docs/rancher/v2.x/en/security/#rancher-cves-and-resolutions"
-    Announcement:         ""
+    Announcement:         "https://rancher.com/docs/rancher/v2.x/en/security/#rancher-cves-and-resolutions"
   Severity:               ""
   Description:            "This vulnerability allows authenticated users to potentially extract otherwise private data out of IPs reachable from system service containers used by Rancher. This can include but not only limited to services such as cloud provider metadata services. Although Rancher allow users to configure whitelisted domains for system service access, this flaw can still be exploited by a carefully crafted HTTP request."
 - CVE:                    "CVE-2019-14436"
@@ -20,10 +18,9 @@ Vulnerabilities:
   FirstVulnerableVersion: ""
   Component:              "Rancher"
   Links:
-    CVE:                  ""
+    CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14436"
     NVD:                  ""
-    Rancher:              "https://rancher.com/docs/rancher/v2.x/en/security/#rancher-cves-and-resolutions"
-    Announcement:         ""
+    Announcement:         "https://rancher.com/docs/rancher/v2.x/en/security/#rancher-cves-and-resolutions"
   Severity:               ""
   Description:            "The vulnerability allows a member of a project that has access to edit role bindings to be able to assign themselves or others a cluster level role granting them administrator access to that cluster."
 - CVE:                    "CVE-2019-13209"
@@ -36,11 +33,10 @@ Vulnerabilities:
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=CVE-2019-13209"
     NVD:                  ""
-    Rancher:              "https://rancher.com/docs/rancher/v2.x/en/security/#rancher-cves-and-resolutions"
-    Announcement:         ""
+    Announcement:         "https://rancher.com/docs/rancher/v2.x/en/security/#rancher-cves-and-resolutions"
   Severity:               ""
   Description:            "The vulnerability is known as a Cross-Site Websocket Hijacking attack. This attack allows an exploiter to gain access to clusters managed by Rancher with the roles/permissions of a victim. It requires that a victim to be logged into a Rancher server and then access a third-party site hosted by the exploiter. Once that is accomplished, the exploiter is able to execute commands against the Kubernetes API with the permissions and identity of the victim."
- - CVE:                  "CVE-2019-12303"
+- CVE:                  "CVE-2019-12303"
   FixedIn:
   - "2.2.4"
   - "2.1.10"
@@ -108,4 +104,17 @@ Vulnerabilities:
     Announcement:         ""
   Severity:               ""
   Description:            "Any project member with access to the default namespace can mount the netes-default service account in a pod and then use that pod to execute administrative privileged commands against the Kubernetes cluster."
-
+# The following CVEs are standard k8s CVEs
+- CVE:                    "CVE-2019-11247"
+  FixedIn:
+  - "1.13.9"
+  - "1.14.5"
+  - "1.15.2"
+  FirstVulnerableVersion: "1.7.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11247"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2019-11247"
+    Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/vUtEcSEY6SM"
+  Severity:               "high"
+  Description:            "The Kubernetes kube-apiserver mistakenly allows access to a cluster-scoped custom resource if the request is made as if the resource were namespaced. Authorizations for the resource accessed in this manner are enforced using roles and role bindings within the namespace, meaning that a user with access only to a resource in one namespace could create, view update or delete the cluster-scoped resource (according to their namespace role privileges). Kubernetes affected versions include versions prior to 1.13.9, versions prior to 1.14.5, versions prior to 1.15.2, and versions 1.7, 1.8, 1.9, 1.10, 1.11, 1.12."
