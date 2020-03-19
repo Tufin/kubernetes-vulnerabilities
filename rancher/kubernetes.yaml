@@ -34,7 +34,7 @@ Vulnerabilities:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=CVE-2019-13209"
     NVD:                  ""
     Announcement:         "https://rancher.com/docs/rancher/v2.x/en/security/#rancher-cves-and-resolutions"
-  Severity:               ""
+  Severity:               "medium"
   Description:            "The vulnerability is known as a Cross-Site Websocket Hijacking attack. This attack allows an exploiter to gain access to clusters managed by Rancher with the roles/permissions of a victim. It requires that a victim to be logged into a Rancher server and then access a third-party site hosted by the exploiter. Once that is accomplished, the exploiter is able to execute commands against the Kubernetes API with the permissions and identity of the victim."
 - CVE:                  "CVE-2019-12303"
   FixedIn:
