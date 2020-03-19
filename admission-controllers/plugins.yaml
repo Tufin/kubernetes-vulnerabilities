@@ -240,7 +240,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+     Reason: Recommended by Kubernetes for versions 1.16 and later
    FeatureState: 
      State:   Alpha
      Version: "1.16"
@@ -273,14 +273,14 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+     Reason: Recommended by Kubernetes for versions 1.16 and later
 -  Plugin: TaintNodesByCondition
    Description: "This admission controller taints newly created Nodes as NotReady and NoSchedule. That tainting avoids a race condition that could cause Pods to be scheduled on new Nodes before their taints were updated to accurately reflect their reported conditions."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#taintnodesbycondition
    Recommendation:
    - Platform: vanilla
      Enable: True
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+     Reason: Recommended by Kubernetes for versions 1.14 and later
    FeatureState: 
      State:   Beta
      Version: "1.12"
