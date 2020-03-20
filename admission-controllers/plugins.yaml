@@ -43,6 +43,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: DefaultTolerationSeconds
    Description: >
@@ -51,6 +52,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for version 1.10
 -  Plugin: DenyExecOnPrivileged
    Description: >
@@ -129,6 +131,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: MutatingAdmissionWebhook
    Description: >
@@ -137,6 +140,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState: 
      State:   Beta
@@ -193,6 +197,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: PodPreset
    Description: >
@@ -224,6 +229,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: ResourceQuota
    Description: >
@@ -232,6 +238,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for versions 1.10 and later
 -  Plugin: RuntimeClass
    Description: >
@@ -240,6 +247,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.16"
      Reason: Recommended by Kubernetes for versions 1.16 and later
    FeatureState: 
      State:   Alpha
@@ -251,8 +259,8 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
-     Condition: Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used
-     Reason: CIS benchmark 1.2.13
+     Condition: Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used.
+     Reason: CIS benchmark 1.2.13. Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used.
    - Platform: gke
      Enable: False
      Reason: >
@@ -273,6 +281,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.16"
      Reason: Recommended by Kubernetes for versions 1.16 and later
 -  Plugin: TaintNodesByCondition
    Description: "This admission controller taints newly created Nodes as NotReady and NoSchedule. That tainting avoids a race condition that could cause Pods to be scheduled on new Nodes before their taints were updated to accurately reflect their reported conditions."
@@ -280,6 +289,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.14"
      Reason: Recommended by Kubernetes for versions 1.14 and later
    FeatureState: 
      State:   Beta
@@ -291,6 +301,7 @@ Plugins:
    Recommendation:
    - Platform: vanilla
      Enable: True
+     EnabledSince: "v1.10"
      Reason: Recommended by Kubernetes for versions 1.10 and later
    FeatureState:
      State:   Beta
