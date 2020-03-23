@@ -1,4 +1,30 @@
 Vulnerabilities:
+- CVE:                    "CVE-2020-8552"
+  FixedIn:
+  - "v1.15.10"
+  - "v1.16.7"
+  - "v1.17.3"
+  FirstVulnerableVersion: "1.0.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8552"
+    NVD:                  "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-8552"
+    Announcement:         "https://github.com/kubernetes/kubernetes/issues/89378"
+  Severity:               "medium"
+  Description:            "The Kubernetes API server has been found to be vulnerable to a denial of service attack via authorized API requests. If an attacker that can make an authorized resource request to an unpatched API server, then you are vulnerable to this. Prior to v1.14, this was possible via unauthenticated requests by default."
+- CVE:                    "CVE-2020-8551"
+  FixedIn:
+  - "v1.15.10"
+  - "v1.16.7"
+  - "v1.17.3"
+  FirstVulnerableVersion: "1.0.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8551"
+    NVD:                  "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-8551"
+    Announcement:         "https://github.com/kubernetes/kubernetes/issues/89377"
+  Severity:               "medium"
+  Description:            "The Kubelet has been found to be vulnerable to a denial of service attack via the kubelet API, including the unauthenticated HTTP read-only API typically served on port 10255, and the authenticated HTTPS API typically served on port 10250. If an attacker can make a request to an unpatched kubelet, then you may be vulnerable to this."
 - CVE:                    "CVE-2019-11255"
   ExistsIn:
     Versions:
