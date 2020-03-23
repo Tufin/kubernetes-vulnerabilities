@@ -1,4 +1,20 @@
 Vulnerabilities:
+- CVE:                    "CVE-2020-0601"
+  FixedIn:
+  - "1.14.7-gke.40"
+  - "1.14.8-gke.33"
+  - "1.14.9-gke.23"
+  - "1.14.10-gke.17"
+  - "1.15.7-gke.23"
+  - "1.16.4-gke.22"
+  FirstVulnerableVersion: "1.0.0-gke.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0601"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2020-0601"
+    Announcement:         "https://cloud.google.com/kubernetes-engine/docs/security-bulletins#january_21_2020"
+  Severity:               "high"
+  Description:            "A spoofing vulnerability exists in the way Windows CryptoAPI (Crypt32.dll) validates Elliptic Curve Cryptography (ECC) certificates. An attacker could exploit the vulnerability by using a spoofed code-signing certificate to sign a malicious executable, making it appear the file was from a trusted, legitimate source, aka 'Windows CryptoAPI Spoofing Vulnerability'."
 - CVE:                    "CVE-2019-11253"
   FixedIn:
   - "1.12.10-gke.15"
