@@ -40,20 +40,12 @@ Plugins:
      This admission controller observes creation of PersistentVolumeClaim objects that do not request any specific storage class and automatically adds a default storage class to them.
      This way, users that do not request any special storage class do not need to care about them at all and they will get the default one.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaultstorageclass
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+   EnabledSince: "v1.10"
 -  Plugin: DefaultTolerationSeconds
    Description: >
      This admission controller sets the default forgiveness toleration for pods to tolerate the taints notready:NoExecute and unreachable:NoExecute for 5 minutes, if the pods don’t already have toleration for taints node.kubernetes.io/not-ready:NoExecute or node.alpha.kubernetes.io/unreachable:NoExecute.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaulttolerationseconds
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for version 1.10
+   EnabledSince: "v1.10"
 -  Plugin: DenyExecOnPrivileged
    Description: >
      This admission controller will intercept all requests to exec a command in a pod if that pod has a privileged container.
@@ -128,20 +120,12 @@ Plugins:
      If you are using LimitRange objects in your Kubernetes deployment, you MUST use this admission controller to enforce those constraints.
      LimitRanger can also be used to apply default resource requests to Pods that don’t specify any; currently, the default LimitRanger applies a 0.1 CPU requirement to all Pods in the default namespace.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#limitranger
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+   EnabledSince: "v1.10"
 -  Plugin: MutatingAdmissionWebhook
    Description: >
      This admission controller calls any mutating webhooks which match the request. Matching webhooks are called in serial; each one may modify the object if it desires. This admission controller (as implied by the name) only runs in the mutating phase. If a webhook called by this has side effects (for example, decrementing quota) it must have a reconciliation system, as it is not guaranteed that subsequent webhooks or validating admission controllers will permit the request to finish. If you disable the MutatingAdmissionWebhook, you must also disable the MutatingWebhookConfiguration object in the admissionregistration.k8s.io/v1beta1 group/version via the --runtime-config flag (both are on by default in versions >= 1.9).
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#mutatingadmissionwebhook
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+   EnabledSince: "v1.10"
    FeatureState: 
      State:   Beta
      Version: "1.13"
@@ -194,11 +178,7 @@ Plugins:
 -  Plugin: PersistentVolumeClaimResize
    Description: "This admission controller implements additional validations for checking incoming PersistentVolumeClaim resize requests."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#persistentvolumeclaimresize
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+   EnabledSince: "v1.10"
 -  Plugin: PodPreset
    Description: >
      This admission controller injects a pod with the fields specified in a matching PodPreset. See also PodPreset concept and Inject Information into Pods Using a PodPreset for more information.
@@ -226,29 +206,17 @@ Plugins:
    Description: >
      The priority admission controller uses the priorityClassName field and populates the integer value of the priority. If the priority class is not found, the Pod is rejected.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#priority
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+   EnabledSince: "v1.10"
 -  Plugin: ResourceQuota
    Description: >
      This admission controller will observe the incoming request and ensure that it does not violate any of the constraints enumerated in the ResourceQuota object in a Namespace. If you are using ResourceQuota objects in your Kubernetes deployment, you MUST use this admission controller to enforce quota constraints.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#resourcequota
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+   EnabledSince: "v1.10"
 -  Plugin: RuntimeClass
    Description: >
      For RuntimeClass definitions which describe an overhead associated with running a pod, this admission controller will set the pod.Spec.Overhead field accordingly.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#runtimeclass
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.16"
-     Reason: Recommended by Kubernetes for versions 1.16 and later
+   EnabledSince: "v1.16"
    FeatureState: 
      State:   Alpha
      Version: "1.16"
@@ -278,31 +246,18 @@ Plugins:
    Description: >
      The StorageObjectInUseProtection plugin adds the kubernetes.io/pvc-protection or kubernetes.io/pv-protection finalizers to newly created Persistent Volume Claims (PVCs) or Persistent Volumes (PV). In case a user deletes a PVC or PV the PVC or PV is not removed until the finalizer is removed from the PVC or PV by PVC or PV Protection Controller.
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#storageobjectinuseprotection
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.16"
-     Reason: Recommended by Kubernetes for versions 1.16 and later
+   EnabledSince: "v1.16"
 -  Plugin: TaintNodesByCondition
    Description: "This admission controller taints newly created Nodes as NotReady and NoSchedule. That tainting avoids a race condition that could cause Pods to be scheduled on new Nodes before their taints were updated to accurately reflect their reported conditions."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#taintnodesbycondition
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.14"
-     Reason: Recommended by Kubernetes for versions 1.14 and later
+   EnabledSince: "v1.14"
    FeatureState: 
      State:   Beta
      Version: "1.12"
 -  Plugin: ValidatingAdmissionWebhook
    Description: "This admission controller calls any validating webhooks which match the request."
    Documentation: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#validatingadmissionwebhook
-   Recommended: 
-   Recommendation:
-   - Platform: vanilla
-     Enable: True
-     EnabledSince: "v1.10"
-     Reason: Recommended by Kubernetes for versions 1.10 and later
+   EnabledSince: "v1.10"
    FeatureState:
      State:   Beta
      Version: "1.13"
