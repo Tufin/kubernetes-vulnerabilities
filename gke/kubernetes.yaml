@@ -14,7 +14,7 @@ Vulnerabilities:
     NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2020-0601"
     Announcement:         "https://cloud.google.com/kubernetes-engine/docs/security-bulletins#january_21_2020"
   Severity:               "high"
-  Description:            "A spoofing vulnerability exists in the way Windows CryptoAPI (Crypt32.dll) validates Elliptic Curve Cryptography (ECC) certificates. An attacker could exploit the vulnerability by using a spoofed code-signing certificate to sign a malicious executable, making it appear the file was from a trusted, legitimate source, aka 'Windows CryptoAPI Spoofing Vulnerability'."
+  Description:            "Microsoft has disclosed a vulnerability in the Windows Crypto API and its validation of elliptic curve signatures. For most GKE users, no further action is required. Only nodes running Windows Server are impacted. For customers who are using Windows Server nodes, both the nodes and the containerized workloads that run on those nodes must be updated to patched versions to mitigate this vulnerability."
 - CVE:                    "CVE-2019-11253"
   FixedIn:
   - "1.12.10-gke.15"
