@@ -2,18 +2,20 @@
 
 [![CircleCI](https://circleci.com/gh/Tufin/kubernetes-vulnerabilities.svg?style=svg)](https://circleci.com/gh/Tufin/kubernetes-vulnerabilities)
 
-Security vulnerabilities of Kubernetes.
+This git repo contains information about Kubernetes:
+1. Security vulnerabilities
+2. Admission controller plugins
 
-Each file in the folders (vanilla, gke, etc.) contains CVEs for a specific component of kubernetes:
-
-- kubectl: vulnerabilities in the kubectl command-line
-- kubelet: vulnerabilities in the kubelet node agent
-- kubernetes: any vulnerability that requires an upgrade of kubernetes itself
-- linux-kernel: kubernetes-related vulnerabilities that stem from the node OS
-
+## Vulnerabilities
+Each file in the folders (vanilla, gke, eks, etc.) contain known vulnerabilities of kubernetes.  
+Each file has a list of CVEs.  
 Each CVE must have one of the following fields:
 
 - FixedIn: patch numbers that fix each vulnerable minor version (higher versions are assumed fixed)
 - ExistsIn: a list of vulnerable versions (ranges or versions)
 
 FirstVulnerableVersion is the first version that exposed this vulnerability.
+
+## Admission Controllers
+This file contains a list of kubernetes admission controller plugins.  
+Each plugin may have a recommendation (enable/disable) for each kubernetes platform.  
