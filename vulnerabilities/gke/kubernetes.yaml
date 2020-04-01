@@ -6,7 +6,7 @@ Vulnerabilities:
   - "1.14.10-gke.24"
   - "1.15.9-gke.20"
   - "1.16.6-gke.1"
-  FirstVulnerableVersion: "1.0.0"
+  FirstVulnerableVersion: "1.0.0-gke.0"
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11254"
@@ -19,7 +19,7 @@ Vulnerabilities:
   - "1.14.10-gke.32"
   - "1.15.10-gke.0"
   - "1.16.7-gke.0"
-  FirstVulnerableVersion: "1.0.0"
+  FirstVulnerableVersion: "1.0.0-gke.0"
   Component:              "kubernetes"
   Links:
     CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8552"
