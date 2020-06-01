@@ -29,8 +29,8 @@ done
 echo ""
 echo "Tests completed with status: '$status'"
 
-if [ "${status}" -ne "success" ]; then
-  exit 1
-else
+if [[ "${status}" == "success" ]]; then
   exit 0
+else
+  exit 1
 fi
