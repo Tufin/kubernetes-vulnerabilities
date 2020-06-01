@@ -1,17 +1,17 @@
 Vulnerabilities:
 - CVE:                    "CVE-2020-10749"
   FixedIn:
-    - "1.16.11"
-    - "1.17.7"
-    - "1.18.4"
-    FirstVulnerableVersion: "1.0.0"
-    Component:              "kubernetes"
-    Links:
-      CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10749"
-      NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2020-10749"
-      Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/BMb_6ICCfp8"
-    Severity:               "medium"
-    Description:            "A cluster configured to use an affected container networking implementation is susceptible to man-in-the-middle (MitM) attacks. By sending “rogue” router advertisements, a malicious container can reconfigure the host to redirect part or all of the IPv6 traffic of the host to the attacker-controlled container. Even if there was no IPv6 traffic before, if the DNS returns A (IPv4) and AAAA (IPv6) records, many HTTP libraries will try to connect via IPv6 first then fallback to IPv4, giving an opportunity to the attacker to respond."
+  - "1.16.11"
+  - "1.17.7"
+  - "1.18.4"
+  FirstVulnerableVersion: "1.0.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                  "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10749"
+    NVD:                  "https://nvd.nist.gov/vuln/detail/CVE-2020-10749"
+    Announcement:         "https://groups.google.com/forum/#!topic/kubernetes-security-announce/BMb_6ICCfp8"
+  Severity:               "medium"
+  Description:            "A cluster configured to use an affected container networking implementation is susceptible to man-in-the-middle (MitM) attacks. By sending “rogue” router advertisements, a malicious container can reconfigure the host to redirect part or all of the IPv6 traffic of the host to the attacker-controlled container. Even if there was no IPv6 traffic before, if the DNS returns A (IPv4) and AAAA (IPv6) records, many HTTP libraries will try to connect via IPv6 first then fallback to IPv4, giving an opportunity to the attacker to respond."
 - CVE:                    "CVE-2019-11254"
   FixedIn:
   - "1.15.10"
