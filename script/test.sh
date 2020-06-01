@@ -28,3 +28,9 @@ done
 
 echo ""
 echo "Tests completed with status: '$status'"
+
+if [[ "${status}" == "failed" ]]; then
+  exit 1
+else
+  exit 0
+fi
