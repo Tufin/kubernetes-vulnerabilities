@@ -29,7 +29,7 @@ done
 echo ""
 echo "Tests completed with status: '$status'"
 
-if [[ "${status}" == "failed" ]]; then
+if [ "${status}" -ne "success" ]; then
   exit 1
 else
   exit 0
