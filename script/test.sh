@@ -12,7 +12,7 @@ jobNumber=$(curl -s -X POST \
     }}' \
     "https://circleci.com/api/v1.1/project/github/Tufin/orca?circle-token=${CIRCLE_TOKEN_ORCA}" | jq -r '.build_num')
 
-echo "Watting for audit test's job number: '${jobNumber}'"
+echo "Waiting for audit test's job number: '${jobNumber}'"
 status="na"
 for i in $(seq 1 600); do
     job=$(curl -s "https://circleci.com/api/v1.1/project/github/Tufin/orca/${jobNumber}?circle-token=${CIRCLE_TOKEN_ORCA}")
