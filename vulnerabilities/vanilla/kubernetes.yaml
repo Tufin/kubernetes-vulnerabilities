@@ -1,4 +1,31 @@
 Vulnerabilities:
+- CVE:                    "CVE-2020-8559"
+  FixedIn:
+  - "1.16.13"
+  - "1.17.9"
+  - "1.18.6"
+  FirstVulnerableVersion: "1.0.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                    "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8559"
+    NVD:                    "https://nvd.nist.gov/vuln/detail/CVE-2020-8559"
+    Announcement:           "https://groups.google.com/g/kubernetes-security-announce/c/JAIGG5yNROs"
+  Severity:               "medium"
+  Description:            "Privilege escalation from compromised node to cluster."
+- CVE:                    "CVE-2020-8557"
+  FixedIn:
+  - "1.16.13"
+  - "1.17.9"
+  - "1.18.6"
+  - "v1.19.0"
+  FirstVulnerableVersion: "1.0.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                    "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8557"
+    NVD:                    "https://nvd.nist.gov/vuln/detail/CVE-2020-8557"
+    Announcement:           "https://groups.google.com/g/kubernetes-security-announce/c/cB_JUsYEKyY"
+  Severity:               "medium"
+  Description:            "Node disk DOS by writing to container /etc/hosts."
 - CVE:                    "CVE-2020-8558"
   FixedIn:
   - "1.16.11"
