@@ -1,4 +1,15 @@
 Vulnerabilities:
+- CVE:                    "CVE-2020-8563"
+  FixedIn:
+  - "1.19.3"
+  FirstVulnerableVersion: "1.19.0"
+  Component:              "kubernetes"
+  Links:
+    CVE:                    "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8563"
+    NVD:                    "https://nvd.nist.gov/vuln/detail/CVE-2020-8563"
+    Announcement:           "https://groups.google.com/g/kubernetes-announce/c/ScdmyORnPDk/m/d5FAjR4pAwAJ"
+  Severity:               "medium"
+  Description:            "Secret leaks in kube-controller-manager when using vSphere provider."
 - CVE:                    "CVE-2020-8559"
   FixedIn:
   - "1.16.13"
